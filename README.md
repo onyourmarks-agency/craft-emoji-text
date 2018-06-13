@@ -1,8 +1,8 @@
 # TDE Emoji text plugin for Craft CMS 3.x
 
-This plugin bypasses the error X
+This plugin bypasses the error "X cannot contain emoji". 
 
-![Screenshot](resources/img/plugin-logo.png)
+In short terms, instead of storing the data as plain text, we'll store the data as a Base64 encoded string.
 
 ## Requirements
 
@@ -22,22 +22,11 @@ To install the plugin, follow these instructions.
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for TDE Emoji text.
 
-## TDE Emoji text Overview
-
--Insert text here-
-
-## Configuring TDE Emoji text
-
--Insert text here-
-
 ## Using TDE Emoji text
 
--Insert text here-
-
-## TDE Emoji text Roadmap
-
-Some things to do, and ideas for potential features:
-
-* Release it
-
+In the admin panel, create a new field.
+ - Select Emoji Text
+ - Configure the options (it just wraps the regular text field)
+ - You're done :-)
+ 
 Brought to you by [TDE B.V.](https://www.tde.nl/en/)

@@ -2,20 +2,16 @@
 /**
  * TDE Emoji text plugin for Craft CMS 3.x
  *
- * This plugin bypasses the error X
- *
  * @link      https://www.tde.nl/en/
  * @copyright Copyright (c) 2018 TDE B.V.
  */
 
-namespace tde\tdeemojitext;
+namespace TDE\EmojiText;
 
-use tde\tdeemojitext\fields\EmojiText as EmojiTextField;
+use TDE\EmojiText\fields\EmojiText;
 
 use Craft;
 use craft\base\Plugin;
-use craft\services\Plugins;
-use craft\events\PluginEvent;
 use craft\services\Fields;
 use craft\events\RegisterComponentTypesEvent;
 
@@ -25,30 +21,21 @@ use yii\base\Event;
  * Class TdeEmojiText
  *
  * @author    TDE B.V.
- * @package   TdeEmojiText
+ * @package   TDE\EmojiText
  * @since     1.0.0
  *
  */
 class TdeEmojiText extends Plugin
 {
-    // Static Properties
-    // =========================================================================
-
     /**
      * @var TdeEmojiText
      */
     public static $plugin;
 
-    // Public Properties
-    // =========================================================================
-
     /**
      * @var string
      */
     public $schemaVersion = '1.0.0';
-
-    // Public Methods
-    // =========================================================================
 
     /**
      * @inheritdoc
@@ -62,16 +49,7 @@ class TdeEmojiText extends Plugin
             Fields::class,
             Fields::EVENT_REGISTER_FIELD_TYPES,
             function (RegisterComponentTypesEvent $event) {
-                $event->types[] = EmojiTextField::class;
-            }
-        );
-
-        Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                }
+                $event->types[] = EmojiText::class;
             }
         );
 
@@ -84,8 +62,4 @@ class TdeEmojiText extends Plugin
             __METHOD__
         );
     }
-
-    // Protected Methods
-    // =========================================================================
-
 }

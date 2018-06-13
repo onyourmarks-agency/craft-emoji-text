@@ -2,88 +2,29 @@
 /**
  * TDE Emoji text plugin for Craft CMS 3.x
  *
- * This plugin bypasses the error X
- *
  * @link      https://www.tde.nl/en/
  * @copyright Copyright (c) 2018 TDE B.V.
  */
 
-namespace tde\tdeemojitext\fields;
+namespace TDE\EmojiText\fields;
 
-use tde\tdeemojitext\TdeEmojiText;
-use tde\tdeemojitext\assetbundles\emojitextfield\EmojiTextFieldAsset;
-
-use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
-use craft\helpers\Db;
-use yii\db\Schema;
-use craft\helpers\Json;
+use craft\fields\PlainText;
 
 /**
  * @author    TDE B.V.
- * @package   TdeEmojiText
+ * @package   TDE\EmojiText
  * @since     1.0.0
  */
 class EmojiText extends Field
 {
-    // Public Properties
-    // =========================================================================
-
-    /**
-     * @var string
-     */
-    public $someAttribute = 'Some Default';
-
-    // Static Methods
-    // =========================================================================
-
     /**
      * @inheritdoc
      */
     public static function displayName(): string
     {
-        return Craft::t('tde-emoji-text', 'EmojiText');
-    }
-
-    // Public Methods
-    // =========================================================================
-
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
-        $rules = parent::rules();
-        $rules = array_merge($rules, [
-            ['someAttribute', 'string'],
-            ['someAttribute', 'default', 'value' => 'Some Default'],
-        ]);
-        return $rules;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getContentColumnType(): string
-    {
-        return Schema::TYPE_STRING;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function normalizeValue($value, ElementInterface $element = null)
-    {
-        return $value;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function serializeValue($value, ElementInterface $element = null)
-    {
-        return parent::serializeValue($value, $element);
+        return Craft::t('tde-emoji-text', 'TDE Emoji text');
     }
 
     /**
@@ -91,13 +32,28 @@ class EmojiText extends Field
      */
     public function getSettingsHtml()
     {
-        // Render the settings template
-        return Craft::$app->getView()->renderTemplate(
-            'tde-emoji-text/_components/fields/EmojiText_settings',
-            [
-                'field' => $this,
-            ]
-        );
+        return parent::getSettingsHtml();
+    }
+
+
+    /**
+     * @inheritdoc
+     */
+    public function normalizeValue($value, ElementInterface $element = null)
+    {
+        if (base64_encode(base64_decode($value, true)) === $value) {
+            return parent::normalizeValue(base64_decode($value), $element);
+        }
+
+        return parent::normalizeValue($value, $element);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function serializeValue($value, ElementInterface $element = null)
+    {
+        return parent::serializeValue(base64_encode($value), $element);
     }
 
     /**
@@ -105,33 +61,19 @@ class EmojiText extends Field
      */
     public function getInputHtml($value, ElementInterface $element = null): string
     {
-        // Register our asset bundle
-        Craft::$app->getView()->registerAssetBundle(EmojiTextFieldAsset::class);
-
-        // Get our id and namespace
-        $id = Craft::$app->getView()->formatInputId($this->handle);
-        $namespacedId = Craft::$app->getView()->namespaceInputId($id);
-
-        // Variables to pass down to our field JavaScript to let it namespace properly
-        $jsonVars = [
-            'id' => $id,
-            'name' => $this->handle,
-            'namespace' => $namespacedId,
-            'prefix' => Craft::$app->getView()->namespaceInputId(''),
-            ];
-        $jsonVars = Json::encode($jsonVars);
-        Craft::$app->getView()->registerJs("$('#{$namespacedId}-field').TdeEmojiTextEmojiText(" . $jsonVars . ");");
-
-        // Render the input template
-        return Craft::$app->getView()->renderTemplate(
-            'tde-emoji-text/_components/fields/EmojiText_input',
-            [
-                'name' => $this->handle,
-                'value' => $value,
-                'field' => $this,
-                'id' => $id,
-                'namespacedId' => $namespacedId,
-            ]
-        );
+        return parent::getInputHtml($value, $element);
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        $rules = parent::rules();
+        $rules[] = [['initialRows', 'charLimit'], 'integer', 'min' => 1];
+        $rules[] = [['charLimit'], 'validateCharLimit'];
+
+        return $rules;
+    }
+
 }
