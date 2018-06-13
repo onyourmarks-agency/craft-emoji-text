@@ -34,6 +34,6 @@
         "hasCpSettings": false,
         "hasCpSection": false,
         "changelogUrl": "https://raw.githubusercontent.com/TdeNL/tde-emoji-text/master/CHANGELOG.md",
-        "class": "tde\\tdeemojitext\\TdeEmojiText"
+        "class": "TDE\\EmojiText\\TdeEmojiText"
     }
 }
