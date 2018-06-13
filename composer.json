@@ -1,6 +1,6 @@
 {
-    "name": "tde/tde-emoji-text",
-    "description": "This plugin bypasses the error X",
+    "name": "tde/craft-emoji-text",
+    "description": "This plugin bypasses the error \"X cannot contain emoji\".",
     "type": "craft-plugin",
     "keywords": [
         "craft",
