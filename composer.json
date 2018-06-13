@@ -7,7 +7,7 @@
         "cms",
         "craftcms",
         "craft-plugin",
-        "tde emoji text"
+        "craft emoji text"
     ],
     "support": {
         "docs": "https://github.com/TdeNL/tde-emoji-text/blob/master/README.md",
@@ -30,7 +30,7 @@
     },
     "extra": {
         "name": "TDE Emoji text",
-        "handle": "tde-emoji-text",
+        "handle": "craft-emoji-text",
         "hasCpSettings": false,
         "hasCpSection": false,
         "changelogUrl": "https://raw.githubusercontent.com/TdeNL/tde-emoji-text/master/CHANGELOG.md",
