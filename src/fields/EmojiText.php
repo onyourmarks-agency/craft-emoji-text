@@ -17,7 +17,7 @@ use craft\fields\PlainText;
  * @package   TDE\EmojiText
  * @since     1.0.0
  */
-class EmojiText extends Field
+class EmojiText extends PlainText
 {
     /**
      * @inheritdoc
