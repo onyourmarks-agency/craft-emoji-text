@@ -52,14 +52,5 @@ class TdeEmojiText extends Plugin
                 $event->types[] = EmojiText::class;
             }
         );
-
-        Craft::info(
-            Craft::t(
-                'tde-emoji-text',
-                '{name} plugin loaded',
-                ['name' => $this->name]
-            ),
-            __METHOD__
-        );
     }
 }
