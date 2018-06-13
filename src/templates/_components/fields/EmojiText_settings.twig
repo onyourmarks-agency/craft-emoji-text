@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * TDE Emoji text plugin for Craft CMS
+ *
+ * EmojiText Field Settings
+ *
+ * @author    TDE B.V.
+ * @copyright Copyright (c) 2018 TDE B.V.
+ * @link      https://www.tde.nl/en/
+ * @package   TdeEmojiText
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("tde\\tdeemojitext\\assetbundles\\tdeemojitext\\TdeEmojiTextAsset") %}
+
+{{ forms.textField({
+    label: 'Some Attribute',
+    instructions: 'Enter some attribute here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: field['someAttribute']})
+}}

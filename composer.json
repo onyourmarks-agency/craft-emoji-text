@@ -1,0 +1,40 @@
+{
+    "name": "tde/tde-emoji-text",
+    "description": "This plugin bypasses the error X",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "tde emoji text"
+    ],
+    "support": {
+        "docs": "https://github.com/TdeNL/tde-emoji-text/blob/master/README.md",
+        "issues": "https://github.com/TdeNL/tde-emoji-text/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TDE B.V.",
+            "homepage": "https://www.tde.nl/en/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "tde\\tdeemojitext\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "TDE Emoji text",
+        "handle": "tde-emoji-text",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/TdeNL/tde-emoji-text/master/CHANGELOG.md",
+        "class": "tde\\tdeemojitext\\TdeEmojiText"
+    }
+}
