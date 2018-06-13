@@ -24,7 +24,7 @@ class EmojiText extends Field
      */
     public static function displayName(): string
     {
-        return \Craft::t('tde-emoji-text', 'TDE Emoji text');
+        return 'TDE Emoji text';
     }
 
     /**
