@@ -1,4 +1,4 @@
-# TDE Emoji text plugin for Craft CMS 3.x
+# TDE Emoji text plugin for Craft CMS 4.x
 
 This plugin bypasses the error "X cannot contain emoji". 
 
@@ -6,7 +6,7 @@ In short terms, instead of storing the data as plain text, we'll store the data 
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-beta.23 or later.
+This plugin requires Craft CMS 4.0.0 or later.
 
 ## Installation
 
