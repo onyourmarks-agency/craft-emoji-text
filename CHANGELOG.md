@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.1 - 2020-06-09
+### Fixed
+- Fix "validateCharLimit" error when saving the emoji text field
+
 ## 1.0.0 - 2018-06-13
 ### Added
 - Initial release
