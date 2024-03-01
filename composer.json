@@ -27,7 +27,8 @@
     "autoload": {
         "psr-4": {
           "oym\\craft\\emojitext\\": "src/"
-        }
+        },
+				"files": ["src/deprecated.php"]
     },
     "extra": {
         "name": "OYM Emoji text",

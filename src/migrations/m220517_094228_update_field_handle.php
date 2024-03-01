@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace oym\craft\emojitext\migrations;
 
 use Craft;
@@ -12,9 +14,6 @@ use oym\craft\emojitext\fields\EmojiText;
  */
 class m220517_094228_update_field_handle extends Migration
 {
-    /**
-     * @inheritdoc
-     */
     public function safeUp(): bool
     {
         $this->update(
@@ -24,15 +23,12 @@ class m220517_094228_update_field_handle extends Migration
             ],
             [
                 'type' => 'OYM\EmojiText\fields\EmojiText',
-            ]
+            ],
         );
 
         return true;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function safeDown(): bool
     {
         $this->update(
@@ -42,7 +38,7 @@ class m220517_094228_update_field_handle extends Migration
             ],
             [
                 'type' => EmojiText::class,
-            ]
+            ],
         );
 
         return false;

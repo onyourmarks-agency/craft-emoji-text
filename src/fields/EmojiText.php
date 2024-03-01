@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace oym\craft\emojitext\fields;
 
 use craft\base\ElementInterface;
