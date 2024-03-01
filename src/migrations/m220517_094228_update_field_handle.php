@@ -1,12 +1,11 @@
 <?php
 
-namespace tde\craft\emojitext\migrations;
+namespace oym\craft\emojitext\migrations;
 
 use Craft;
 use craft\db\Migration;
 use craft\db\Table;
-use tde\craft\emojitext\fields\EmojiText;
-use tde\craft\geoaddress\fields\GeoAddressField;
+use oym\craft\emojitext\fields\EmojiText;
 
 /**
  * m220517_094228_update_field_handle migration.
@@ -24,7 +23,7 @@ class m220517_094228_update_field_handle extends Migration
                 'type' => EmojiText::class,
             ],
             [
-                'type' => 'TDE\EmojiText\fields\EmojiText',
+                'type' => 'OYM\EmojiText\fields\EmojiText',
             ]
         );
 
@@ -39,7 +38,7 @@ class m220517_094228_update_field_handle extends Migration
         $this->update(
             Table::FIELDS,
             [
-                'type' => 'TDE\EmojiText\fields\EmojiText',
+                'type' => 'OYM\EmojiText\fields\EmojiText',
             ],
             [
                 'type' => EmojiText::class,

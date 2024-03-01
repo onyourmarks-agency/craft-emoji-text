@@ -1,19 +1,17 @@
 <?php
 
-namespace tde\craft\emojitext;
-
-namespace tde\craft\emojitext;
+namespace oym\craft\emojitext;
 
 use craft\base\Plugin;
 use craft\services\Fields;
 use craft\events\RegisterComponentTypesEvent;
 
-use tde\craft\emojitext\fields\EmojiText;
+use oym\craft\emojitext\fields\EmojiText;
 use yii\base\Event;
 
-class TdeEmojiText extends Plugin
+class OymEmojiText extends Plugin
 {
-    public static TdeEmojiText $plugin;
+    public static OymEmojiText $plugin;
 
     public string $schemaVersion = '1.0.0';
 

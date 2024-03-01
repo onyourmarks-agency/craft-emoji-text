@@ -1,8 +1,12 @@
-# TDE Emoji text Changelog
+# OYM Emoji text Changelog
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## 2.1.0 - 2024-03-01
+### Changed
+- Changed TDE > OYM
 
 ## 2.0.0 - 2023-01-02
 ### Changed

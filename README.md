@@ -1,4 +1,4 @@
-# TDE Emoji text plugin for Craft CMS 4.x
+# OYM Emoji text plugin for Craft CMS 4.x
 
 This plugin bypasses the error "X cannot contain emoji". 
 
@@ -18,15 +18,15 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require tde/craft-emoji-text
+        composer require oym/craft-emoji-text
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for TDE Emoji text.
+3. In the Control Panel, go to Settings → Plugins and click the “Install” button for OYM Emoji text.
 
-## Using TDE Emoji text
+## Using OYM Emoji text
 
 In the admin panel, create a new field.
  - Select Emoji Text
  - Configure the options (it just wraps the regular text field)
  - You're done :-)
  
-Brought to you by [TDE B.V.](https://www.tde.nl/en/)
+Brought to you by [On Your Marks](https://www.onyourmarks.agency/en/)

@@ -1,6 +1,6 @@
 <?php
 
-namespace tde\craft\emojitext\fields;
+namespace oym\craft\emojitext\fields;
 
 use craft\base\ElementInterface;
 use craft\fields\PlainText;
@@ -9,7 +9,7 @@ class EmojiText extends PlainText
 {
     public static function displayName(): string
     {
-        return 'TDE Emoji text';
+        return 'OYM Emoji text';
     }
 
     public function normalizeValue(mixed $value, ?ElementInterface $element = null): mixed

@@ -1,5 +1,5 @@
 {
-    "name": "tde/craft-emoji-text",
+    "name": "oym/craft-emoji-text",
     "description": "This plugin bypasses the error \"X cannot contain emoji\".",
     "type": "craft-plugin",
     "keywords": [
@@ -10,14 +10,14 @@
         "craft emoji text"
     ],
     "support": {
-        "docs": "https://github.com/TdeNL/tde-emoji-text/blob/master/README.md",
-        "issues": "https://github.com/TdeNL/tde-emoji-text/issues"
+        "docs": "https://github.com/onyourmarks-agency/oym-emoji-text/blob/master/README.md",
+        "issues": "https://github.com/onyourmarks-agency/oym-emoji-text/issues"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "TDE B.V.",
-            "homepage": "https://www.tde.nl/en/"
+            "name": "OYM",
+            "homepage": "https://www.onyourmarks.agency/en/"
         }
     ],
     "require": {
@@ -26,16 +26,16 @@
     },
     "autoload": {
         "psr-4": {
-          "tde\\craft\\emojitext\\": "src/"
+          "oym\\craft\\emojitext\\": "src/"
         }
     },
     "extra": {
-        "name": "TDE Emoji text",
+        "name": "OYM Emoji text",
         "handle": "craft-emoji-text",
         "hasCpSettings": false,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/TdeNL/tde-emoji-text/master/CHANGELOG.md",
-        "class": "tde\\craft\\emojitext\\TdeEmojiText"
+        "changelogUrl": "https://raw.githubusercontent.com/onyourmarks-agency/oym-emoji-text/master/CHANGELOG.md",
+        "class": "oym\\craft\\emojitext\\OymEmojiText"
     },
     "config": {
         "allow-plugins": {
