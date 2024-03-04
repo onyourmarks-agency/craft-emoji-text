@@ -8,7 +8,7 @@ namespace tde\craft\emojitext {
     spl_autoload_register(
         static function (string $className) {
             $old = 'tde\\craft\\emojitext\\';
-            $new = 'oym\\craft\emojitext\\';
+            $new = 'oym\\craft\\emojitext\\';
 
             if (0 !== strpos($className, $old)) {
                 return;
