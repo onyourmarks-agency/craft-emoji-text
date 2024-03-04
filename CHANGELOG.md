@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.1.2 - 2024-03-04
+### Fixed
+- Fixed indenting composer.json
+
 ## 2.1.1 - 2024-03-04
 ### Fixed
 - Fixed missing \ in namespace
