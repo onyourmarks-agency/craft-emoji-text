@@ -18,7 +18,12 @@ class EmojiText extends PlainText
     {
         $value = (string) $value;
 
-        if (base64_encode(base64_decode($value, true)) === $value) {
+        $decodedValue = base64_decode($value, true);
+        if (!$decodedValue) {
+            return parent::normalizeValue($value, $element);
+        }
+        
+        if (base64_encode($decodedValue) === $value) {
             return parent::normalizeValue(base64_decode($value), $element);
         }
 

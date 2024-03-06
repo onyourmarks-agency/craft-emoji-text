@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.1.6 - 2024-03-06
+### Fixed
+- Improve error check for base64_decode
+
 ## 2.1.5 - 2024-03-06
 ### Fixed
 - Fix type hinting for `serializeValue` method
