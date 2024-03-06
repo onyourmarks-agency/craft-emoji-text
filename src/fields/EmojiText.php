@@ -16,6 +16,8 @@ class EmojiText extends PlainText
 
     public function normalizeValue(mixed $value, ?ElementInterface $element = null): mixed
     {
+        $value = (string) $value;
+        
         if (base64_encode(base64_decode($value, true)) === $value) {
             return parent::normalizeValue(base64_decode($value), $element);
         }
