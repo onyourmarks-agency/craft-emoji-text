@@ -21,14 +21,13 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "craftcms/cms": "^4.0.0"
+        "php": "^8.2",
+        "craftcms/cms": "^5.0.0-beta.1"
     },
     "autoload": {
         "psr-4": {
           "oym\\craft\\emojitext\\": "src/"
-        },
-        "files": ["src/deprecated.php"]
+        }
     },
     "extra": {
         "name": "OYM Emoji text",

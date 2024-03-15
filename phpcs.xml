@@ -4,50 +4,8 @@
 	<rule ref="PSR12">
 		<exclude name="Generic.Files.LineLength"/>
 	</rule>
-	<rule ref="PSR12.Properties.ConstantVisibility.NotFound">
-		<type>error</type>
-	</rule>
-
-	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
-		<properties>
-			<property name="newlinesCountBetweenOpenTagAndDeclare" value="2"/>
-			<property name="spacesCountAroundEqualsSign" value="0"/>
-		</properties>
-	</rule>
-
-	<rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
-	<rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
-	<rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall"/>
-	<rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInClosureUse"/>
-	<rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration"/>
-	<rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
-	<rule ref="SlevomatCodingStandard.Functions.RequireArrowFunction"/>
-	<rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment"/>
-	<rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment"/>
-	<rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
-		<properties>
-			<property name="forbiddenAnnotations" type="array">
-				<element value="@author"/>
-				<element value="@created"/>
-				<element value="@copyright"/>
-				<element value="@license"/>
-				<element value="@package"/>
-				<element value="@version"/>
-			</property>
-		</properties>
-	</rule>
-
-	<rule ref="SlevomatCodingStandard.Commenting.ForbiddenComments">
-		<properties>
-			<property name="forbiddenCommentPatterns" type="array">
-				<element value="/^Class [a-zA-z]*\.?$/"/>
-				<element value="/^Interface [a-zA-z]*\.?$/"/>
-			</property>
-		</properties>
-	</rule>
 
 	<file>src/</file>
 
-	<exclude-pattern>vendor</exclude-pattern>
-	<exclude-pattern>src/deprecated.php</exclude-pattern>
+	<exclude-pattern type="relative-root">*.js</exclude-pattern>
 </ruleset>
