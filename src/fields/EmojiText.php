@@ -22,7 +22,7 @@ class EmojiText extends PlainText
         if (!$decodedValue) {
             return parent::normalizeValue($value, $element);
         }
-        
+
         if (base64_encode($decodedValue) === $value) {
             return parent::normalizeValue(base64_decode($value), $element);
         }

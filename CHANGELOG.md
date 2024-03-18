@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.1.0 - 2024-03-18
+### Added
+- Added migration to update Emoji Text fields to Plain text fields. Also update the elements_sites.content column values.
+
 ## 3.0.0 - 2024-03-15
 ### Updated
 - Updated PHP version to 8.2 or higher
