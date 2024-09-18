@@ -34,9 +34,9 @@ class m240315_160450_migrate_to_plain_text extends Migration
 
             $query = sprintf(
                 'SELECT 
-                    elements_sites.id,
-                    elements_sites.content
-                FROM elements_sites
+                    '. $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites.id,
+                    '. $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites.content
+                FROM '. $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites
                 WHERE JSON_EXTRACT(elements_sites.content, \'$."%s"\') IS NOT NULL
                 ',
                 $layoutElementUid
@@ -49,7 +49,7 @@ class m240315_160450_migrate_to_plain_text extends Migration
                 $content[$layoutElementUid] = \base64_decode($content[$layoutElementUid]);
 
                 \Craft::$app->getDb()->createCommand()->update(
-                    'elements_sites',
+                    $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites',
                     ['content' => Db::prepareForJsonColumn($content)],
                     ['id' => $elementSite['id']]
                 )->execute();
