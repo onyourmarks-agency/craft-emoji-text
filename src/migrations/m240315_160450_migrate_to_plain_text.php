@@ -37,7 +37,7 @@ class m240315_160450_migrate_to_plain_text extends Migration
                     '. $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites.id,
                     '. $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites.content
                 FROM '. $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites
-                WHERE JSON_EXTRACT(elements_sites.content, \'$."%s"\') IS NOT NULL
+                WHERE JSON_EXTRACT('. $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites.content, \'$."%s"\') IS NOT NULL
                 ',
                 $layoutElementUid
             );
