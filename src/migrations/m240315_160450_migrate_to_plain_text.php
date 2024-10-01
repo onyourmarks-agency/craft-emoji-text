@@ -45,8 +45,12 @@ class m240315_160450_migrate_to_plain_text extends Migration
             $elementsSite = \Craft::$app->getDb()->createCommand($query)->queryAll();
 
             foreach ($elementsSite as $elementSite) {
-                $content = json_decode($elementSite['content'], true);
-                $content[$layoutElementUid] = \base64_decode($content[$layoutElementUid]);
+                try {
+                    $content = json_decode($elementSite['content'], true);
+                    $content[$layoutElementUid] = \base64_decode($content[$layoutElementUid]);
+                } catch (\Throwable $e) {
+                    continue;
+                }
 
                 \Craft::$app->getDb()->createCommand()->update(
                     $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites',
