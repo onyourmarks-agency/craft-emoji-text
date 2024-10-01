@@ -52,11 +52,20 @@ class m240315_160450_migrate_to_plain_text extends Migration
                     continue;
                 }
 
-                \Craft::$app->getDb()->createCommand()->update(
-                    $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites',
-                    ['content' => Db::prepareForJsonColumn($content)],
-                    ['id' => $elementSite['id']]
-                )->execute();
+                try {
+                    \Craft::$app->getDb()->createCommand()->update(
+                        $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites',
+                        ['content' => $content],
+                        ['id' => $elementSite['id']]
+                    )->execute();
+                } catch (\Throwable $e) {
+                    // try again, but with character encoding (we do not want to tamper with the data if it is not necessary)
+                    \Craft::$app->getDb()->createCommand()->update(
+                        $_ENV['CRAFT_DB_TABLE_PREFIX'] .'elements_sites',
+                        ['content' => mb_convert_encoding($content, 'UTF-8', 'UTF-8')],
+                        ['id' => $elementSite['id']]
+                    )->execute();
+                }
             }
         }
 

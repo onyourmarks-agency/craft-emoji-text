@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 3.1.4 - 2024-10-01
+### Fixed
+- Fixed migration that could fail with incorrect character encoding
+
 ## 3.1.3 - 2024-10-01
 ### Fixed
 - Fixed migration that could occur when a table contained corrupted JSON data
